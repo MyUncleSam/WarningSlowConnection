@@ -36,7 +36,7 @@ namespace WarningSlowConnection
             {
                 // open adapter overview and print some information
                 System.Diagnostics.Process.Start("ncpa.cpl");
-                MessageBox.Show($"Following connection speeds are too low:{Environment.NewLine}{Environment.NewLine}- {string.Join($"{Environment.NewLine}- ", tooSlow.Select(s => s.Name))}", $"Interfaces with too slow connection speeds found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Following connection speeds are too low:{Environment.NewLine}{Environment.NewLine}- {string.Join($"{Environment.NewLine}- ", tooSlow.Select(s => $"{s.Name} --> Speed:{s.Speed / 1000 / 1000}"))}", $"Interfaces with too slow connection speeds found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             this.Close();
